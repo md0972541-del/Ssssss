@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFAIT RECOVERY V86.2</title>
+    <title>SAFAIT RECOVERY V86.3</title>
     <style>
         :root { --gold: #FFD700; --bg: #000; --neon: #00ff00; }
         body { background: var(--bg); color: #fff; font-family: 'Orbitron', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
@@ -18,8 +18,8 @@
 <body>
 
 <div class="panel">
-    <div style="font-size: 11px; color: #ff3131; font-weight: bold;">● LIVE SERVER CONNECTED</div>
-    <div id="p_id" style="font-size: 11px; margin-top: 5px; color: #00ffff;">SYNCING PERIOD...</div>
+    <div style="font-size: 11px; color: #ff3131; font-weight: bold;">● SERVER SYNC: PERIOD 10375</div>
+    <div id="p_id" style="font-size: 11px; margin-top: 5px; color: #00ffff;">SYNCING...</div>
     <div class="timer" id="timer">00s</div>
 
     <div class="box">
@@ -36,7 +36,8 @@
 </div>
 
 <script>
-    const recoverySeed = [4, 2, 8, 3, 7, 1, 9, 0, 6, 5];
+    // আপনার লস হিস্ট্রি থেকে রিকভারি সিড
+    const recoverySeed = [8, 2, 5, 3, 9, 1, 7, 0, 4, 6];
 
     function update() {
         const now = new Date();
@@ -46,8 +47,8 @@
 
         let totalMin = (now.getHours() * 60) + now.getMinutes();
         
-        // দুপুর ১২:২১ PM অনুযায়ী পিরিয়ড ১০৩৭১ এর সাথে সিঙ্ক ফিক্স
-        let base = 10371 - ((12 * 60) + 21); 
+        // দুপুর ১২:১৪ PM অনুযায়ী পিরিয়ড ১০৩৭৫ এর সাথে সিঙ্ক ফিক্স (১১ পিরিয়ড গ্যাপ পূরণ)
+        let base = 10375 - ((12 * 60) + 14); 
         let currentP = base + totalMin;
         
         document.getElementById('p_id').innerText = "PERIOD: 202603101000" + currentP;
