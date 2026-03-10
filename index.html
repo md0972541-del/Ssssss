@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFAIT RECOVERY V86.1</title>
+    <title>SAFAIT RECOVERY V86.2</title>
     <style>
         :root { --gold: #FFD700; --bg: #000; --neon: #00ff00; }
         body { background: var(--bg); color: #fff; font-family: 'Orbitron', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .panel { width: 350px; text-align: center; border: 5px solid var(--gold); border-radius: 50px; padding: 25px; background: #0a0a0a; box-shadow: 0 0 50px rgba(255, 215, 0, 0.2); }
-        .timer { font-size: 60px; font-weight: 900; color: #ff0000; margin: 10px 0; }
-        .box { border: 2px solid #333; border-radius: 30px; padding: 20px; margin-bottom: 15px; }
+        .panel { width: 350px; text-align: center; border: 5px solid var(--gold); border-radius: 50px; padding: 25px; background: #0a0a0a; box-shadow: 0 0 50px rgba(255, 215, 0, 0.3); }
+        .timer { font-size: 65px; font-weight: 900; color: #ff3131; margin: 10px 0; }
+        .box { border: 2px solid #333; border-radius: 30px; padding: 20px; margin-bottom: 15px; background: rgba(0, 255, 0, 0.05); }
         .num { font-size: 75px; color: var(--gold); font-weight: 900; text-shadow: 0 0 20px var(--gold); }
-        .bs { font-size: 40px; color: var(--neon); font-weight: bold; letter-spacing: 3px; }
+        .bs { font-size: 40px; color: var(--neon); font-weight: bold; letter-spacing: 5px; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="panel">
-    <div style="font-size: 11px; color: #ff3131; font-weight: bold;">● TARGETING PERIOD: SYNCED</div>
-    <div id="p_id" style="font-size: 11px; margin-top: 5px; color: #00ffff;">WAITING...</div>
+    <div style="font-size: 11px; color: #ff3131; font-weight: bold;">● LIVE SERVER CONNECTED</div>
+    <div id="p_id" style="font-size: 11px; margin-top: 5px; color: #00ffff;">SYNCING PERIOD...</div>
     <div class="timer" id="timer">00s</div>
 
     <div class="box">
-        <div style="font-size: 10px; color: #888;">RECOVERY NUMBER</div>
+        <div style="font-size: 10px; color: #aaa;">SNIPER NUMBER</div>
         <div class="num" id="n_val">?</div>
     </div>
 
     <div class="box">
-        <div style="font-size: 10px; color: #888;">MAIN PREDICTION</div>
+        <div style="font-size: 10px; color: #aaa;">MAIN PREDICTION</div>
         <div class="bs" id="bs_val">---</div>
     </div>
 
@@ -36,8 +36,7 @@
 </div>
 
 <script>
-    // মার্কেট ড্রাগন লুপ ৪-২-৮ প্যাটার্ন সিড
-    const recoverySeed = [4, 8, 2, 7, 3, 9, 1, 0, 6, 5];
+    const recoverySeed = [4, 2, 8, 3, 7, 1, 9, 0, 6, 5];
 
     function update() {
         const now = new Date();
@@ -47,8 +46,8 @@
 
         let totalMin = (now.getHours() * 60) + now.getMinutes();
         
-        // পিরিয়ড ১০৩৬৬ এর সাথে সিঙ্ক করতে ২ যোগ করে বেস আপডেট করা হয়েছে
-        let base = 10366 - ((12 * 60) + 11); 
+        // দুপুর ১২:২১ PM অনুযায়ী পিরিয়ড ১০৩৭১ এর সাথে সিঙ্ক ফিক্স
+        let base = 10371 - ((12 * 60) + 21); 
         let currentP = base + totalMin;
         
         document.getElementById('p_id').innerText = "PERIOD: 202603101000" + currentP;
